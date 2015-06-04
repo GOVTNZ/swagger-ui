@@ -1,11 +1,14 @@
 {
-  "name": "GOVTNZ/swagger-ui",
-  "description": "Swagger-ui with CSS changes and composer integration",
-  "type": "library",
-  "homepage": "https://github.com/GOVTNZ/swagger-ui.git",
-  "keywords": ["swagger", "API", "UI"],
-  "license": "Apache License, Version 2.0",
-  "authors": [
-    {"name": "Govt.nz","email": "govtnz@dia.govt.nz"}
-  ]
+    "name": "govtnz/swagger-ui",
+    "description": "Swagger-ui with CSS changes and composer integration",
+    "type": "library",
+    "homepage": "https://github.com/govtnz/swagger-ui.git",
+    "keywords": ["swagger", "API", "UI"],
+    "license": "Apache License, Version 2.0",
+    "authors": [
+        {
+            "name": "Govt.nz",
+            "email": "govtnz@dia.govt.nz"
+        }
+    ]
 }
