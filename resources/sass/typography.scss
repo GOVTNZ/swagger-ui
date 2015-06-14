@@ -1,0 +1,31 @@
+//fonts
+$font_0: Droid Sans;
+
+//urls
+$url_0: url(/vendor/govtnz/swagger-ui/dist/fonts/droid-sans-v6-latin-regular.eot);
+$url_1: url(/vendor/govtnz/swagger-ui/dist/fonts/droid-sans-v6-latin-regular.eot?#iefix);
+$url_2: url(/vendor/govtnz/swagger-ui/dist/fonts/droid-sans-v6-latin-regular.woff2);
+$url_3: url(/vendor/govtnz/swagger-ui/dist/fonts/droid-sans-v6-latin-regular.woff);
+$url_4: url(/vendor/govtnz/swagger-ui/dist/fonts/droid-sans-v6-latin-regular.ttf);
+$url_5: url(/vendor/govtnz/swagger-ui/dist/fonts/droid-sans-v6-latin-regular.svg#DroidSans);
+$url_6: url(/vendor/govtnz/swagger-ui/dist/fonts/droid-sans-v6-latin-700.eot);
+$url_7: url(/vendor/govtnz/swagger-ui/dist/fonts/droid-sans-v6-latin-700.eot?#iefix);
+$url_8: url(/vendor/govtnz/swagger-ui/dist/fonts/droid-sans-v6-latin-700.woff2);
+$url_9: url(/vendor/govtnz/swagger-ui/dist/fonts/droid-sans-v6-latin-700.woff);
+$url_10: url(/vendor/govtnz/swagger-ui/dist/fonts/droid-sans-v6-latin-700.ttf);
+$url_11: url(/vendor/govtnz/swagger-ui/dist/fonts/droid-sans-v6-latin-700.svg#DroidSans);
+
+@font-face {
+  font-family: $font_0;
+  font-style: normal;
+  font-weight: 400;
+  src: $url_0;
+  src: local('Droid Sans'), local('DroidSans'), $url_1 format('embedded-opentype'), $url_2 format('woff2'), $url_3 format('woff'), $url_4 format('truetype'), $url_5 format('svg');
+}
+@font-face {
+  font-family: $font_0;
+  font-style: normal;
+  font-weight: 700;
+  src: $url_6;
+  src: local('Droid Sans Bold'), local('DroidSans-Bold'), $url_7 format('embedded-opentype'), $url_8 format('woff2'), $url_9 format('woff'), $url_10 format('truetype'), $url_11 format('svg');
+}

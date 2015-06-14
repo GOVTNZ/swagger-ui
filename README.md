@@ -1,5 +1,10 @@
 # Swagger UI
 
+## govtnz/swagger-ui
+This is a fork of Swagger UI with small additions (no changes) to assist integration with Silverstripe.
+Please read [SILVERSTRIPE.md](SILVERSTRIPE.md) for details.
+**The remainder of this README.md file is unchanged.** 
+
 [![Build Status](https://travis-ci.org/swagger-api/swagger-ui.svg?branch=master)](https://travis-ci.org/swagger-api/swagger-ui)
 
 Swagger UI is part of the Swagger project.  The Swagger project allows you to produce, visualize and consume your OWN RESTful services.  No proxy or 3rd party services required.  Do it your own way.
