@@ -10,7 +10,8 @@ This package forks the current *swagger-ui* with the addition of one paragraph a
 The structure and contents of the original *swagger-ui* repository are unchanged apart from the additional paragraph in the [README.md](README.md) document.
 Govt.nz can merge new versions of the base *swagger-ui* repository by re-applying the above enhancements.
  
-This *govtnz/swagger-ui* package was intended as a companion to [govtnz/silverstripe-api](https://github.com/govtnz/silverstripe-api), but can be used on its own.
+This *govtnz/swagger-ui* package was intended as a companion to [govtnz/silverstripe-api](https://github.com/govtnz/silverstripe-api), but can be used on its own with minor changes to
+*/resources/javascript/api-swagger.js*.
 
 &nbsp;
 ## Installation
@@ -35,7 +36,7 @@ You can move these to a directory that Compass is watching, then
 1. remove the */govtnz/swagger-ui/dist/css* element from the *.htaccess* file entry.
 
 ### Change fonts
-Modifying the Swagger UI CSS with either approach is a pre-requisite to modifying the default fonts. 
+Modifying the Swagger UI CSS with either of the above approaches is a pre-requisite to modifying the default fonts. 
 If you don't use the default fonts, remember to remove the */govtnz/swagger-ui/dist/fonts* element from the *.htaccess* file entry.
 
 You'll find it helpful to check the examples in the */resources* subdirectory and read the **.htaccess rules** section below.
@@ -45,8 +46,8 @@ You'll find it helpful to check the examples in the */resources* subdirectory an
 Swagger UI's functionality is entirely written in Javascript.
 It should not be necessary to edit the core Swagger UI files in */dist/lib*.
 However, you might want to change some of the top-level behaviours, for which the key files are:
+* */resources/api-swagger.js* (usually this is the only file you'll need to change)
 * */dist/swagger-ui.js*
-* */resources/api-swagger.js*
 
 You can copy these files to another location and edit them.
 Remember to 
@@ -60,7 +61,7 @@ The */resources* subdirectory contains:
 
 1. An example swagger-ui page controller in */resources/code/SwaggerPage.php*. You can copy the key sections from this into your own page controller.
 1. The */resources/javascript/api-swagger.js* file which must be included in your page template.
-1. Four *.scss* files in */resources/sass* which can be copied and used if your site uses SASS and you want to modify Swagger's appearance.
+1. Four *.scss* files in */resources/sass* which can be copied and included if your site uses SASS and you want to modify Swagger's appearance.
 1. An example swagger-ui page template in */resources/templates/SwaggerPage.ss*. Copy the marked section into your own page template.
 
 &nbsp;
