@@ -22,12 +22,35 @@ class SwaggerPage extends Page {
 
 class SwaggerPage_Controller extends Page_Controller {
 
-    /**
-     * Replace the [PATH] placeholder for the final entry in both the following code blocks with the location where
-     * you've copied the api-swagger.js file.
-     */
     public function init(){
         parent::init();
+
+        // --------------------------------------------------------------------
+        // CSS
+        // --------------------------------------------------------------------
+
+        Requirements::css('vendor/govtnz/swagger-ui/dist/css/reset.css', 'print,screen');
+        Requirements::css('vendor/govtnz/swagger-ui/dist/css/typography.css', 'print,screen');
+        Requirements::css('vendor/govtnz/swagger-ui/dist/css/print.css', 'print');
+        Requirements::css('vendor/govtnz/swagger-ui/dist/css/screen.css', 'screen');
+
+        $print = array(
+            'vendor/govtnz/swagger-ui/dist/css/reset.css',
+            'vendor/govtnz/swagger-ui/dist/css/typography.css',
+            'vendor/govtnz/swagger-ui/dist/css/print.css'
+        );
+        Requirements::combine_files('swagger-print.css', $print, 'print');
+
+        $screen = array(
+            'vendor/govtnz/swagger-ui/dist/css/reset.css',
+            'vendor/govtnz/swagger-ui/dist/css/typography.css',
+            'vendor/govtnz/swagger-ui/dist/css/screen.css'
+        );
+        Requirements::combine_files('swagger-screen.css', $screen, 'screen');
+
+        // --------------------------------------------------------------------
+        // Javascript
+        // --------------------------------------------------------------------
 
         Requirements::javascript('vendor/govtnz/swagger-ui/dist/lib/jquery.slideto.min.js');
         Requirements::javascript('vendor/govtnz/swagger-ui/dist/lib/jquery.wiggle.min.js');
@@ -38,8 +61,8 @@ class SwaggerPage_Controller extends Page_Controller {
         Requirements::javascript('vendor/govtnz/swagger-ui/dist/lib/highlight.7.3.pack.js');
         Requirements::javascript('vendor/govtnz/swagger-ui/dist/lib/marked.js');
         Requirements::javascript('vendor/govtnz/swagger-ui/dist/lib/swagger-oauth.js');
-        Requirements::javascript('vendor/govtnz/swagger-ui/dist/swagger-ui.js');
-        Requirements::javascript('[PATH]/javascript/api-swagger.js');
+        Requirements::javascript('vendor/govtnz/swagger-ui/dist/swagger-ui.min.js');
+        Requirements::javascript('vendor/govtnz/swagger-ui/resources/javascript/api-swagger.js');
 
         Requirements::combine_files(
             'swagger.js',
@@ -53,8 +76,8 @@ class SwaggerPage_Controller extends Page_Controller {
                 'vendor/govtnz/swagger-ui/dist/lib/highlight.7.3.pack.js',
                 'vendor/govtnz/swagger-ui/dist/lib/marked.js',
                 'vendor/govtnz/swagger-ui/dist/lib/swagger-oauth.js',
-                'vendor/govtnz/swagger-ui/dist/swagger-ui.js',
-                '[PATH]/javascript/api-swagger.js'
+                'vendor/govtnz/swagger-ui/dist/swagger-ui.min.js',
+                'vendor/govtnz/swagger-ui/resources/javascript/api-swagger.js'
             )
         );
     }

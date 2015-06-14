@@ -4,6 +4,7 @@
 <% end_if %>
 $Content
 
+<!-- Copy everything inside swagger-section into your own page template -->
 <div class="swagger-section">
     <div id="swagger-header">
         <div class="swagger-ui-wrap">
@@ -23,3 +24,4 @@ $Content
     <div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>
     <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
 </div>
+<!-- Copy ends here -->
