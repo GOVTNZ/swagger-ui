@@ -5,21 +5,13 @@
         if(key && key.trim() != "") {
             var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization("api_key", key, "query");
             window.swaggerUi.api.clientAuthorizations.add("api_key", apiKeyAuth);
-            log("added key " + key);
+            //log("added key " + key);
         }
     }
 
-    function log() {
-        if ('console' in window) {
-            console.log.apply(console, arguments);
-        }
-    }
-
-    $(document).ready(function() {
-        // Change this location
-        url = window.location.protocol + "//" + window.location.host + "/api/v1/api.json";
+    function loadAPI(sUrl){
         window.swaggerUi = new SwaggerUi({
-            url: url,
+            url: sUrl,
             dom_id: "swagger-ui-container",
             supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
             onComplete: function (swaggerApi, swaggerUi) {
@@ -53,6 +45,20 @@
          */
 
         window.swaggerUi.load();
+    }
+
+    function log() {
+        if ('console' in window) {
+            console.log.apply(console, arguments);
+        }
+    }
+
+    $(document).ready(function() {
+        loadAPI($("#api_data_dir").val() + "/" + $("#api_version").val() + "/api.json");
+
+        $("#api_version").on("change", function(){
+           loadAPI($("#api_data_dir").val() + "/" + $("#api_version").val() + "/api.json");
+        });
     }); // document load
 
 })(jQuery);

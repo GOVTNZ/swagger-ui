@@ -52,16 +52,18 @@ class SwaggerPage_Controller extends Page_Controller {
         // Javascript
         // --------------------------------------------------------------------
 
+        parent::init();
+
         Requirements::javascript('vendor/govtnz/swagger-ui/dist/lib/jquery.slideto.min.js');
         Requirements::javascript('vendor/govtnz/swagger-ui/dist/lib/jquery.wiggle.min.js');
         Requirements::javascript('vendor/govtnz/swagger-ui/dist/lib/jquery.ba-bbq.min.js');
         Requirements::javascript('vendor/govtnz/swagger-ui/dist/lib/handlebars-2.0.0.js');
         Requirements::javascript('vendor/govtnz/swagger-ui/dist/lib/underscore-min.js');
         Requirements::javascript('vendor/govtnz/swagger-ui/dist/lib/backbone-min.js');
+        Requirements::javascript('vendor/govtnz/swagger-ui/dist/swagger-ui.js');
         Requirements::javascript('vendor/govtnz/swagger-ui/dist/lib/highlight.7.3.pack.js');
         Requirements::javascript('vendor/govtnz/swagger-ui/dist/lib/marked.js');
         Requirements::javascript('vendor/govtnz/swagger-ui/dist/lib/swagger-oauth.js');
-        Requirements::javascript('vendor/govtnz/swagger-ui/dist/swagger-ui.min.js');
         Requirements::javascript('vendor/govtnz/swagger-ui/resources/javascript/api-swagger.js');
 
         Requirements::combine_files(
@@ -73,15 +75,44 @@ class SwaggerPage_Controller extends Page_Controller {
                 'vendor/govtnz/swagger-ui/dist/lib/handlebars-2.0.0.js',
                 'vendor/govtnz/swagger-ui/dist/lib/underscore-min.js',
                 'vendor/govtnz/swagger-ui/dist/lib/backbone-min.js',
+                'vendor/govtnz/swagger-ui/dist/swagger-ui.js',
                 'vendor/govtnz/swagger-ui/dist/lib/highlight.7.3.pack.js',
                 'vendor/govtnz/swagger-ui/dist/lib/marked.js',
                 'vendor/govtnz/swagger-ui/dist/lib/swagger-oauth.js',
-                'vendor/govtnz/swagger-ui/dist/swagger-ui.min.js',
                 'vendor/govtnz/swagger-ui/resources/javascript/api-swagger.js'
             )
         );
     }
 
     private static $allowed_actions = array();
+
+    public function APIDir(){
+        return Director::absoluteURL(Config::inst()->get('API', 'data_dir'));
+    }
+
+    public function APIVersions(){
+        // Populate the available API versions, selecting the most recent as the default
+        $api_data_dir = Director::baseFolder().Config::inst()->get('API', 'data_dir');
+        if (file_exists($api_data_dir)){
+            $dirlist = array();
+            foreach (new DirectoryIterator($api_data_dir) as $subdir) {
+                if($subdir->isDir() && !$subdir->isDot())
+                    $dirlist[] = strtolower($subdir->getFileName());
+            }
+            if (count($dirlist) > 0){
+                sort($dirlist);
+                $out = new ArrayList();
+                for ($pos = 0; $pos < count($dirlist); $pos++){
+                    $out->push(new ArrayData(array(
+                        "Path" => $dirlist[$pos],
+                        "Name" => str_replace('v', 'version ', $dirlist[$pos]),
+                        "Selected" => (($pos === count($dirlist) - 1) ? 'selected' : '')
+                    )));
+                }
+                return $out;
+            }
+        }
+        return null;
+    }
 
 }
