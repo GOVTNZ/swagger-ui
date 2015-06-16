@@ -4,15 +4,21 @@
 
 &nbsp;
 ## govtnz/swagger-ui
-This package forks the current *swagger-ui* with the addition of one paragraph at the top of the [README.md](README.md) document and the addition of several new files:
+This package forks the current *swagger-ui* with the addition of one paragraph at the top of the [README.md](README.md) document and several new files:
 * This *SILVERSTRIPE.md* documentation.
 * The *composer.json* file.
-* The */resources* folder and its content.
+* The */resources* folder and its contents.
 
 The structure and contents of the original *swagger-ui* repository are unchanged apart from the additional paragraph in the [README.md](README.md) document.
 Govt.nz can merge new versions of the base *swagger-ui* repository by re-applying the above enhancements.
  
 This *govtnz/swagger-ui* package was intended as a companion to [govtnz/silverstripe-api](https://github.com/govtnz/silverstripe-api), but can be used on its own.
+
+### Why fork the original repository?
+*Swagger* is the world's most popular API definition/documentation specification, but it's not Silverstripe friendly.
+Building it requires Docker, Bower and Travis, none of which is integrated with a default Silverstripe deployment.
+This fork intentionally leaves the raw Swagger code alone, and makes use of the pre-compiled distribution. 
+It makes minimal changes to the original package, ensuring future updates will be straightforward.
 
 &nbsp;
 
@@ -41,7 +47,7 @@ However, you can add a setting in a *config.yml* file to change the location if 
 Swagger:
   data_dir: '/our-api/swagger'
 ```
-Once you've completed these steps and have one or more *swagger.json* files in the right location, navigating an instance of your new page type should display your API in *swagger-ui*. 
+Once you've completed these steps and have one or more *swagger.json* files in the right location, navigating to an instance of your new page type should display your API in *swagger-ui*. 
 
 &nbsp;
 
