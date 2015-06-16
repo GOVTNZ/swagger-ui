@@ -47,7 +47,7 @@ However, you can add a setting in a *config.yml* file to change the location if 
 Swagger:
   data_dir: '/our-api/swagger'
 ```
-Once you've completed these steps and have one or more *swagger.json* files in the right location, navigating to an instance of your new page type should display your API in *swagger-ui*. 
+Once you've completed these steps and have one or more *swagger.json* files in the right location and structure, navigating to an instance of your new page type should display your API in *swagger-ui*. 
 
 &nbsp;
 
