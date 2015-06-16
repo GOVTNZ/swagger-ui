@@ -54,10 +54,10 @@
     }
 
     $(document).ready(function() {
-        loadAPI($("#api_data_dir").val() + "/" + $("#api_version").val() + "/api.json");
+        loadAPI($("#api_data_dir").val() + "/" + $("#api_version").val() + "/swagger.json");
 
         $("#api_version").on("change", function(){
-           loadAPI($("#api_data_dir").val() + "/" + $("#api_version").val() + "/api.json");
+           loadAPI($("#api_data_dir").val() + "/" + $("#api_version").val() + "/swagger.json");
         });
     }); // document load
 

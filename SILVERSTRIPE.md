@@ -1,6 +1,8 @@
 # Using Swagger in Silverstripe
 
 &nbsp;
+
+&nbsp;
 ## govtnz/swagger-ui
 This package forks the current *swagger-ui* with the addition of one paragraph at the top of the [README.md](README.md) document and the addition of several new files:
 * This *SILVERSTRIPE.md* documentation.
@@ -10,14 +12,37 @@ This package forks the current *swagger-ui* with the addition of one paragraph a
 The structure and contents of the original *swagger-ui* repository are unchanged apart from the additional paragraph in the [README.md](README.md) document.
 Govt.nz can merge new versions of the base *swagger-ui* repository by re-applying the above enhancements.
  
-This *govtnz/swagger-ui* package was intended as a companion to [govtnz/silverstripe-api](https://github.com/govtnz/silverstripe-api), but can be used on its own with minor changes to
-*/resources/javascript/api-swagger.js*.
+This *govtnz/swagger-ui* package was intended as a companion to [govtnz/silverstripe-api](https://github.com/govtnz/silverstripe-api), but can be used on its own.
+
+&nbsp;
 
 &nbsp;
 ## Installation
 1. Add [github.com/govtnz/swagger-ui](https://github.com/govtnz/swagger-ui) to your *composer.json* file and run **composer update**.
 1. Ensure there is browser access to the required files inside */vendor/govtnz/swagger-ui/dist*. See **.htaccess rules** below.
-1. Create a new page type and corresponding template that include the Swagger code in the */resources/code* and */resources/templates* subdirectories. 
+1. Create a new page type and corresponding template that include the Swagger code in the */resources/code* and */resources/templates* subdirectories.
+ 
+By default, */govtnz/swagger-ui* expects to find *swagger.json* definition files structured by version in the following location. This is where *govtnz/silverstripe-api* expects to find them.
+```
+/assets
+    |
+    |--api
+    |   |--v1
+    |   |   |--swagger.json
+    |   |
+    |   |--v2
+    |   |   |--swagger.json
+    
+    ... etc  
+```
+However, you can add a setting in a *config.yml* file to change the location if you need to store your *swagger.json* files elsewhere:
+```
+Swagger:
+  data_dir: '/our-api/swagger'
+```
+Once you've completed these steps and have one or more *swagger.json* files in the right location, navigating an instance of your new page type should display your API in *swagger-ui*. 
+
+&nbsp;
 
 &nbsp;
 ## Customise appearance
@@ -42,6 +67,8 @@ If you don't use the default fonts, remember to remove the */govtnz/swagger-ui/d
 You'll find it helpful to check the examples in the */resources* subdirectory and read the **.htaccess rules** section below.
 
 &nbsp;
+
+&nbsp;
 ## Customise functionality
 Swagger UI's functionality is entirely written in Javascript.
 It should not be necessary to edit the core Swagger UI files in */dist/lib*.
@@ -56,6 +83,8 @@ Remember to
 1. remove from the *.htaccess* file entry any elements which are no longer required.
 
 &nbsp;
+
+&nbsp;
 ## Resources for govtnz/swagger-ui
 The */resources* subdirectory contains:
 
@@ -63,6 +92,8 @@ The */resources* subdirectory contains:
 1. The */resources/javascript/api-swagger.js* file which must be included in your page template.
 1. Four *.scss* files in */resources/sass* which can be copied and included if your site uses SASS and you want to modify Swagger's appearance.
 1. An example swagger-ui page template in */resources/templates/SwaggerPage.ss*. Copy the marked section into your own page template.
+
+&nbsp;
 
 &nbsp;
 ## .htaccess rules
@@ -93,3 +124,6 @@ Typically the */vendor* directory contains code used by Silverstripe itself or b
 
 Each installation is different, however. The above .htaccess rule was good for our Silverstripe instance; your requirements may differ.
 
+&nbsp;
+
+&nbsp;
