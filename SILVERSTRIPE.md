@@ -22,7 +22,8 @@ This *govtnz/swagger-ui* package was intended as a companion to [govtnz/silverst
 1. Ensure there is browser access to the required files inside */vendor/govtnz/swagger-ui/dist*. See **.htaccess rules** below.
 1. Create a new page type and corresponding template that include the Swagger code in the */resources/code* and */resources/templates* subdirectories.
  
-By default, */govtnz/swagger-ui* expects to find *swagger.json* definition files structured by version in the following location. This is where *govtnz/silverstripe-api* expects to find them.
+By default, */govtnz/swagger-ui* expects to find *swagger.json* definition files structured by version in the following location. 
+This is where *govtnz/silverstripe-api* creates them, if you're using that package.
 ```
 /assets
     |
