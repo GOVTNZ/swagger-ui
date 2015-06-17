@@ -47,7 +47,8 @@ However, you can add a setting in a *config.yml* file to change the location if 
 Swagger:
   data_dir: '/our-api/swagger'
 ```
-Once you've completed these steps and have one or more *swagger.json* files in the right location and structure, navigating to an instance of your new page type should display your API in *swagger-ui*. 
+Once you've completed these steps and have one or more *swagger.json* files in the right location and structure, navigating to an instance of your new page type should display your API in *swagger-ui*.
+You can copy the contents of */resources/data* to your specified Swagger **data_dir** to test this. 
 
 &nbsp;
 
@@ -96,6 +97,7 @@ Remember to
 The */resources* subdirectory contains:
 
 1. An example swagger-ui page controller in */resources/code/SwaggerPage.php*. You can copy the key sections from this into your own page controller.
+1. Swagger samples in */resources/data* which can be copied in full to the appropriate location to test your Swagger instance.
 1. The */resources/javascript/api-swagger.js* file which must be included in your page template.
 1. Four *.scss* files in */resources/sass* which can be copied and included if your site uses SASS and you want to modify Swagger's appearance.
 1. An example swagger-ui page template in */resources/templates/SwaggerPage.ss*. Copy the marked section into your own page template.
