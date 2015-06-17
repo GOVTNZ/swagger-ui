@@ -87,14 +87,14 @@ class SwaggerPage_Controller extends Page_Controller {
     private static $allowed_actions = array();
 
     public function APIDir(){
-        $dir = Director::absoluteURL(Config::inst()->get('Swagger', 'data_dir'));
-        return (isset($dir)) ? $dir : Director::absoluteURL("assets/api");
+        $dir = Config::inst()->get('Swagger', 'data_dir');
+        return (isset($dir)) ? Director::absoluteURL($dir) : Director::absoluteURL("assets/api");
     }
 
     public function APIVersions(){
         // Populate the available API versions, selecting the most recent as the default
-        $dir = Director::baseFolder().Config::inst()->get('Swagger', 'data_dir');
-        $api_data_dir = (isset($dir)) ? $dir : Director::baseFolder()."/assets/api";
+        $dir = Config::inst()->get('Swagger', 'data_dir');
+        $api_data_dir = (isset($dir)) ? Director::baseFolder().$dir : Director::baseFolder()."/assets/api";
         if (file_exists($api_data_dir)){
             $dirlist = array();
             foreach (new DirectoryIterator($api_data_dir) as $subdir) {
