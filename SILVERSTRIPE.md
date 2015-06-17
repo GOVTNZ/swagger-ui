@@ -42,7 +42,8 @@ This is where *govtnz/silverstripe-api* creates them, if you're using that packa
     
     ... etc  
 ```
-However, you can add a setting in a *config.yml* file to change the location if you need to store your *swagger.json* files elsewhere:
+However, you can add a setting in a *config.yml* file to change the location if you need to store your *swagger.json* files elsewhere. 
+Note that **data_dir** is the equivalent of **/assets/api** in the above structure.
 ```
 Swagger:
   data_dir: '/our-api/swagger'
