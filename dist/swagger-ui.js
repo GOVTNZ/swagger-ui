@@ -21708,7 +21708,8 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
     }
   },
 
-  toggleOperationContent: function() {
+  toggleOperationContent: function(event) {
+    event.preventDefault();
     var elem = $('#' + Docs.escapeResourceName(this.parentId + '_' + this.nickname + '_content'));
     if (elem.is(':visible')){
       Docs.collapseOperation(elem);
