@@ -30,7 +30,7 @@ Otherwise this fork intentionally leaves the raw Swagger code alone, and makes u
 1. Create a new page type and corresponding template that include the Swagger code in the */resources/code* and */resources/templates* subdirectories.
  
 By default, */govtnz/swagger-ui* expects to find *swagger.json* definition files structured by version in the following location. 
-This is where *govtnz/silverstripe-api* creates them, if you're using that package.
+This is where *govtnz/silverstripe-api* creates them by default, if you're using that package.
 ```
 /assets
     |

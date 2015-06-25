@@ -26,7 +26,9 @@
                         </select>
                     <% end_if %>
                     <input type="hidden" id="api_data_dir" value="$APIDir" />
+                    <!--
                     <input type="hidden" id="input_apiKey" name="apiKey" value="api_key" />
+                    -->
                 </form>
             </div>
         </div>
