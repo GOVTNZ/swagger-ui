@@ -27,7 +27,7 @@
                     hljs.highlightBlock(e)
                 });
 
-                addApiKeyAuthorization();
+                //addApiKeyAuthorization();
             },
             onFailure: function (data) {
                 log("Unable to Load SwaggerUI");
@@ -36,7 +36,7 @@
             apisSorter: "alpha"
         });
 
-        $('#input_apiKey').change(addApiKeyAuthorization);
+        //$('#input_apiKey').change(addApiKeyAuthorization);
 
         // if you have an apiKey you would like to pre-populate on the page for demonstration purposes...
         /*
