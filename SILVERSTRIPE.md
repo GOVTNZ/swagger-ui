@@ -5,6 +5,7 @@
 &nbsp;
 ## govtnz/swagger-ui
 This package forks the current *swagger-ui* and makes the following changes: 
+
 1. The addition of one paragraph at the top of the [README.md](README.md) document.
 1. This *SILVERSTRIPE.md* document.
 1. The *composer.json* file.
