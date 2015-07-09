@@ -10,5 +10,8 @@
             "name": "Govt.nz",
             "email": "govtnz@dia.govt.nz"
         }
-    ]
+    ],
+    "require": {
+        "php": ">=5.3"
+    }
 }
