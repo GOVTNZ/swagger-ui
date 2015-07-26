@@ -4,7 +4,7 @@
     "type": "library",
     "homepage": "https://github.com/govtnz/swagger-ui.git",
     "keywords": ["swagger", "API", "UI"],
-    "license": "Apache License, Version 2.0",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "Govt.nz",
